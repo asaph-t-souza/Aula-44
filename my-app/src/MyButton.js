@@ -25,9 +25,9 @@ export function ButtonCounter() {
 
 }
 
-export function SharedCounter({count}) {
+export function SharedCounter({count, handleCounterProps}) {
 
     return(
-        <button>Contador: {count}</button>
+        <button onClick={handleCounterProps}>Contador: {count}</button>
     );
 }
