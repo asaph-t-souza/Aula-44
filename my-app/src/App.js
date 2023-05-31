@@ -1,40 +1,32 @@
+import { useState } from 'react';
 import './App.css';
-import MyButton, {ButtonCounter} from './MyButton';
+import MyButton, {ButtonCounter, SharedCounter} from './MyButton';
 
 function App() {
 
-  let name = "Asaph";
-  const myBoolean = true;
+  let name = "Usuario";
 
-  const compras = ["Repolho", "Tomate", "Cenoura", "Batata"];
-
-  const listaCompras = compras.map( item => 
-    <li key={item}>
-      {item}
-    </li>
-  );
-
-  if(myBoolean){
-    name = "João";
-  } else{
-    name = "Maria";
-  }
+  const [counter, setCounter] = useState(0);
 
   return (
     <>
       <p className="teste"> {name} </p>
+
       <MyButton name={true}/>
       <MyButton />
+
       <br/>
+      <p> Contadores individuais </p>
+
       <ButtonCounter/>
       <ButtonCounter/>
 
+      <br/>
+      <p> Contadores compartilhados </p>
 
-      {myBoolean ? (<h1>Verdadeiro</h1>) : (<h1>Falso</h1>)}
+      <SharedCounter counter={counter}/>
+      <SharedCounter counter={counter}/>
 
-      <ul>
-        {listaCompras}
-      </ul>
     </>
   );
 }

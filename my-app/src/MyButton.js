@@ -24,3 +24,10 @@ export function ButtonCounter() {
     );
 
 }
+
+export function SharedCounter({count}) {
+
+    return(
+        <button>Contador: {count}</button>
+    );
+}
