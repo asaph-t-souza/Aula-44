@@ -24,8 +24,8 @@ function App() {
       <br/>
       <p> Contadores compartilhados </p>
 
-      <SharedCounter counter={counter}/>
-      <SharedCounter counter={counter}/>
+      <SharedCounter count={counter}/>
+      <SharedCounter count={counter}/>
 
     </>
   );
